@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Descobre</title>
+      <style>
+        #menu{
+                background-color: rgb(253, 253, 253);
+                box-sizing: border-box;
+                font-family: "Acme", sans-serif;
+                padding: 0;
+                margin: 0;
+            }
+            .TD{
+                width: 100%;
+                height: 100vh;
+                background-image:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)),url("imagem2.jpg");
+                background-size: cover;
+                background-position: center;
+                
+            }
+            .navbar{
+                width: 85%;
+                margin: auto;
+                padding: 35px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .logo{
+                width: 120px;
+                cursor: pointer;
+            }
+            .navbar ul li{
+                list-style: none;
+                display: inline-block;
+                margin: 0 20px;
+                position: relative;
+
+            }
+            .navbar ul li a {
+                text-decoration: none;
+                color: rgb(230, 233, 236);
+                text-transform: uppercase;
+            }
+            .navbar ul li::after{
+                content: '';
+                height: 3px;
+                width: 0;
+                background: #88aca8;
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                transition: 0.5s;
+            }
+            .navbar ul li:hover::after{
+                width: 100%;
+            }
+            .espaços{  
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+                color:rgb(255, 255, 255);
+            }   
+            .espaços h2{
+                font-size: 200%;
+                margin-top: 26%;
+            }
+            hr{
+                width: 50%;
+                margin: none;
+                background: rgb(155, 197, 197);
+
+            } 
+            button{
+                width: 150px;
+                padding: 15px 0;
+                text-align: center;
+                margin: 3% 2%;
+                border-radius: 25px;
+                font-weight: bold;
+                border: 2px solid #88aca8;
+                background: transparent;
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+                
+            }
+            span{
+                background: #789c98;
+                height: 100%;
+                width: 0%;
+                border-radius: 25px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: -1;
+                transition: 0.5s;
+            }
+            button:hover span{
+                width: 100%;
+            }
+            button:hover{
+                border: none;
+            }
+    </style>
+    <script>
+         const button=document.querySelector("salas")
+            const input=document.querySelector("input-de-salas")
+            function salas(){
+            console.log(input.value)
+            }
+            function Home(){
+                window.location='/Home/index.html'
+            }
+            function Des(){
+                window.location='/Home/descobre/index.html'
+            }
+            function SN(){
+                window.location='/Home/SobreNos/index.html'
+            }
+            function NS(){
+                window.location="sitecominformaçaoreunios.com";
+            }
+            function POR(){
+               window.location="/Home/descobre/outras_salas/Portaria/index.html";
+            }
+            function BIB(){
+                window.location='/Home/descobre/outras_salas/biblioteca/index.html'
+            }
+            function PROF(){
+                window.location='/Home/descobre/outras_salas/Professores/index.html'
+            }
+            function DI(){
+                window.location='/Home/descobre/outras_salas/Direcao/index.html'
+            }
+            function SER(){
+                window.location='/Home/descobre/outras_salas/sercertaria/index.html'
+            }
+            function REPOR(){
+                window.location='/Home/descobre/outras_salas/reprografia/index.html'
+            }
+            function SROB(){
+                window.location='/Home/descobre/outras_salas/robotica/index.html'
+            }
+            function PSI(){
+                window.location='/Home/descobre/outras_salas/psicologia/index.html'
+            }
+            function SAL(){
+                window.location='/Home/descobre/outras_salas/alunos/index.html'
+            }
+            function LFQ(){
+                window.location='/Home/descobre/outras_salas/FQ/index.html'
+            }
+            function LBIO(){
+                window.location='/Home/descobre/outras_salas/BIO/index.html'
+            }
+            function KIT (){
+                window.location='/Home/descobre/outras_salas/KIT/index.html'
+            }
+
+   
+ </script>
+</head>
+<body name="menu">
+    <div class="TD">
+       <div class="navbar">
+          <img src="logo.jpg" alt="Logo" class="logo">
+            <ul>
+                <li onclick="Home()"><a>Home</a></li>
+                <li onclick="Des()"><a>Descobre</a></li>
+                <li onclick=""><a href="">Planta 3D</a></li>
+                <li onclick="SN()"><a>Sobre nós</a></li>
+            </ul>
+        </div>
+        <div class="espaços">
+            <h2> Que outros espaços procuras? </h2>
+            <hr>
+            <button type="button" onclick="BIB()"><span></span>Biblioteca</button>
+            <button type="button" onclick="POR()"><span></span>Portaria</button>
+            <button type="button" onclick="PROF()"><span></span>Sala dos Professores</button>
+            <button type="button" onclick="DI()"><span></span>Direção</button>
+            <button type="button" onclick="SER()"><span></span>Sercertaria</button>
+            <button type="button" onclick="REPOR()"><span></span>Reprografia</button>
+            <button type="button" onclick="SROB()"><span></span>Sala de Robótica</button>
+            <button type="button" onclick="PSI()"><span></span>Psicóloga</button>
+            <button type="button" onclick="SAL()"><span></span>Sala de alunos</button>
+            <button type="button" onclick="LFQ()"><span></span>Laboratorios <br>de Fisica e Quimica</button>
+            <button type="button" onclick="LBIO()"><span></span> Laboratorios <br>de Biologia</button>
+            <button type="button" onclick="KIT()"><span></span>Assistencia<br> ao KIT Informatico</button>
+        </div>
+    </div>
+
+</body>  
