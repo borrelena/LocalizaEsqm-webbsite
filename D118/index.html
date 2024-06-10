@@ -4,10 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Descobre o Espaço Escolar</title>
-        <style>
-            #menu{
-                background-color: rgb(252, 252, 252);
+        <title>Descobre</title>
+      <style>
+        
+        #menu{
+                background-color: rgb(253, 253, 253);
                 box-sizing: border-box;
                 font-family: sans-serif;
                 padding: 0;
@@ -19,6 +20,7 @@
                 background-image:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)),url("imagem2.jpg");
                 background-size: cover;
                 background-position: center;
+                
             }
             .navbar{
                 width: 85%;
@@ -60,20 +62,21 @@
             .Prec{
                 width: 100%;
                 position: absolute;
-                top: 50%;
+                top: 30%;
                 transform: translateY(-50%);
                 text-align: center;
                 color:rgb(255, 255, 255); 
             }
             .Prec h1{
-                font-size: 300%;
-                margin-top: 20%;
+                font-size: 150%;
+                margin-top: 2%;
+                
             }
             input{
-                width: 45%;
-                padding: 15px;
+                width: 75%;
+                padding: 10px;
                 text-align: center;
-                margin: 10px 10px;
+                margin: 5px 5px;
                 border-radius: 25px;
                 font-weight: bold;
                 border: 2px solid #88aca8;
@@ -143,40 +146,73 @@
             #salas:hover{
                 border: none;
             }
+            .Prec h3{
+                font-size:3vh;
+                text-align:right;
+                margin-right: 20%;
+            }
+            .Prec h5{
+                font-size:2vh;
+                text-align:right;
+                margin-right: 20%;
+            }
+            .Percurso{
+                display: flex;
+                align-items: center;
+                padding: 60px;
+                margin-top: 100px;
+            }
+
+            .img {
+                width: 70vh;
+                height: 40vh;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+
+            .legenda {
+                margin-left: 20%;
+                max-width: 70%;
+                text-align: right;
+                color: aliceblue;
+            }
+
+            .legenda h3 {
+                margin: 0 0 10px 0;
+            }
+
+            .legenda p {
+                margin: 0;
+            }
+            .mapa p{
+                margin-top: 10%;
+                font-size: 2vh;
+            }
+                     
       </style>
-      <script>
-        const button=document.querySelector("salas")
-        const input=document.querySelector("input-de-salas")
-        function Home(){
-            window.location='/Home/index.html'
-        }
-        function Des(){
-            window.location='/Home/descobre/index.html'
-        }
-        function SN(){
-            window.location='/Home/SobreNos/index.html'
-        }
-
-        function DESC(){
-           window.location="/Home/descobre/index.html";
-        }
-        function NS(){
-            window.location="sitecominformaçaoreunios.com";
-        }
-        function OESP(){
-            window.location="/Home/descobre/outras_salas/index.html"
-        }
-
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const sala = urlParams.get("sala");
-        if(sala) {
-            window.location.href = `/Home/descobre/salas_aula/${sala}/index.html`
-        }
-
-    </script>
-
-    
+     <script>
+            const button=document.querySelector("salas")
+            const input=document.querySelector("input-de-salas")
+            function salas(){
+            console.log(input.value)
+            }
+            function Home(){
+                window.location='/Home/index.html'
+            }
+            function Des(){
+                window.location='/Home/descobre/index.html'
+            }
+            function SN(){
+                window.location='/Home/SobreNos/index.html'
+            }
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const sala = urlParams.get("sala");
+            if(sala) {
+                window.location.href = `/Home/descobre/salas_aula/${sala}/index.html`
+            }
+                      
+     </script>
 </head>
 <body name="menu">
     <div class="TD">
@@ -189,19 +225,27 @@
                 <li onclick="SN()"><a>Sobre nós</a></li>
             </ul>
         </div>
-         <div class="Prec">
-            <h1>Para que espaço queres ir?</h1>
+        <div class="Prec">
+            <h1>Procuras outro espaço?</h1>
             <form>
-                <input id="sala-finder" placeholder="EX:. A017" name="sala">
+                <input id="sala-finder" placeholder="EX:. A040" name="sala">
                 <button id="salas" class="button" type="submit" onclick="SALA()">
                     <span></span>
                     <img class="butaobusca" src="https://www.svgrepo.com/show/488200/find.svg" alt="Bucar">
                 </button>
             </form>
-            <p></p>
-            <button class="button" id="OESP" onclick="OESP()"><span></span> OUTROS ESPAÇOS</button>
-            <p></p>
-            <button class="button" id="NS" onclick="NS()"><span></span>NÃO SEI A SALA DE REUNIÃO</button>
+        </div>
+        <div class="Percurso"> 
+            <img src="D118.png" alt="percurso" class="img">
+            <div class="legenda">
+                <h3>Descrição do seu caminho</h3>
+                <p>Siga sempre em frente até chegar ao corredor principal.<br>De seguida vire à direta e continue a andar, <br>até chegar ao proximo cruzamento.<br>Depois vire à esquerda até alcançar as escadas.<br>E encontra a sua sala à sua direita. </p>
+                <hr>
+                <div class="mapa">
+                  <p>Casa de banho - espaços a azul claro <br>Escadas - espaços a amarelo</p>
+                </div>
+            </div>
         </div>
     </div>
 </body> 
+

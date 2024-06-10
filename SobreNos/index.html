@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Descobre o Espaço Escolar</title>
-        <style>
-            #menu{
-                background-color: rgb(252, 252, 252);
+        <title>Descobre</title>
+      <style>
+        #menu{
+                background-color: rgb(253, 253, 253);
                 box-sizing: border-box;
                 font-family: sans-serif;
                 padding: 0;
@@ -19,6 +19,7 @@
                 background-image:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)),url("imagem2.jpg");
                 background-size: cover;
                 background-position: center;
+                
             }
             .navbar{
                 width: 85%;
@@ -69,34 +70,7 @@
                 font-size: 300%;
                 margin-top: 20%;
             }
-            input{
-                width: 45%;
-                padding: 15px;
-                text-align: center;
-                margin: 10px 10px;
-                border-radius: 25px;
-                font-weight: bold;
-                border: 2px solid #88aca8;
-                background: transparent;
-                color: rgb(238, 233, 233);
-                cursor: pointer;
-                position: relative;
-                overflow: hidden;
-            }
-            .button{
-                width: 30%;
-                padding: 10px;
-                text-align: center;
-                margin: 5px 0;
-                border-radius: 25px;
-                font-weight: bold;
-                border: 2px solid #88aca8;
-                background: transparent;
-                color: rgb(255, 255, 255);
-                cursor: pointer;
-                position: relative;
-                overflow: hidden;
-            }
+                        
             span{
                 background: #789c98;
                 height: 100%;
@@ -143,6 +117,25 @@
             #salas:hover{
                 border: none;
             }
+            .expl {
+                font-size: 100%;
+                color:aliceblue;
+                padding: 3%;
+                background-color: rgba(44, 51, 77, 0.219);
+                opacity: 90%;
+                margin: 5%;
+            }
+            .expl h1{
+                text-align: left;
+                font-weight: bold;
+            }
+            .expl p{
+                text-align: justify;
+            }
+            .creditos p{
+                font-size: 80%;
+            }
+
       </style>
       <script>
         const button=document.querySelector("salas")
@@ -155,16 +148,6 @@
         }
         function SN(){
             window.location='/Home/SobreNos/index.html'
-        }
-
-        function DESC(){
-           window.location="/Home/descobre/index.html";
-        }
-        function NS(){
-            window.location="sitecominformaçaoreunios.com";
-        }
-        function OESP(){
-            window.location="/Home/descobre/outras_salas/index.html"
         }
 
         const queryString = window.location.search;
@@ -189,19 +172,16 @@
                 <li onclick="SN()"><a>Sobre nós</a></li>
             </ul>
         </div>
-         <div class="Prec">
-            <h1>Para que espaço queres ir?</h1>
-            <form>
-                <input id="sala-finder" placeholder="EX:. A017" name="sala">
-                <button id="salas" class="button" type="submit" onclick="SALA()">
-                    <span></span>
-                    <img class="butaobusca" src="https://www.svgrepo.com/show/488200/find.svg" alt="Bucar">
-                </button>
-            </form>
-            <p></p>
-            <button class="button" id="OESP" onclick="OESP()"><span></span> OUTROS ESPAÇOS</button>
-            <p></p>
-            <button class="button" id="NS" onclick="NS()"><span></span>NÃO SEI A SALA DE REUNIÃO</button>
+        <div class="expl">
+            <h1>Localiza ESQM</h1>
+           <p>O objetivo deste projeto é desenvolver um site/aplicação que auxilie alunos, professores e visitantes na localização e direção para as salas de aula dentro das suas necessidades da escola, facilitando a navegação pelo “campus” e melhorando a eficiência e a experiência de todos os seus usuários.<br> A orientação dentro das instalações escolares pode ser um desafio, especialmente para novos alunos e visitantes. Um site dedicado à localização de salas de aula ajudará a minimizar atrasos, reduzir a frustração e melhorar a gestão do tempo de todos os envolvidos. Esta solução também é particularmente relevante em escolas grandes com várias edificações e salas distribuídas.</p>
+           <hr>
+            <div class="creditos"> 
+                <p>Ana Teresa <br> Filipa Firmo <br> Madalena Borrego <br> Miguel Gouveia <br> Samuel Cunha <br> Tiago Plama <br><br>No ambito da disciplina de Aplicações Informaticas<br> Com a ajuda da porfessora Fatima Santana</p>
+            </div>        
         </div>
     </div>
-</body> 
+        
+    </body>
+</html>
+
