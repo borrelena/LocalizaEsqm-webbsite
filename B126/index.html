@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Descobre</title>
+      <style>
+        
+        #menu{
+                background-color: rgb(253, 253, 253);
+                box-sizing: border-box;
+                font-family: sans-serif;
+                padding: 0;
+                margin: 0;
+            }
+            .TD{
+                width: 100%;
+                height: 100vh;
+                background-image:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)),url("imagem2.jpg");
+                background-size: cover;
+                background-position: center;
+                
+            }
+            .navbar{
+                width: 85%;
+                margin: auto;
+                padding: 35px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .logo{
+                width: 120px;
+                cursor: pointer;
+            }
+            .navbar ul li{
+                list-style: none;
+                display: inline-block;
+                margin: 0 20px;
+                position: relative;
+
+            }
+            .navbar ul li a {
+                text-decoration: none;
+                color: rgb(230, 233, 236);
+                text-transform: uppercase;
+            }
+            .navbar ul li::after{
+                content: '';
+                height: 3px;
+                width: 0;
+                background: #88aca8;
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                transition: 0.5s;
+            }
+            .navbar ul li:hover::after{
+                width: 100%;
+            }
+            .Prec{
+                width: 100%;
+                position: absolute;
+                top: 30%;
+                transform: translateY(-50%);
+                text-align: center;
+                color:rgb(255, 255, 255); 
+            }
+            .Prec h1{
+                font-size: 150%;
+                margin-top: 2%;
+                
+            }
+            input{
+                width: 75%;
+                padding: 10px;
+                text-align: center;
+                margin: 5px 5px;
+                border-radius: 25px;
+                font-weight: bold;
+                border: 2px solid #88aca8;
+                background: transparent;
+                color: rgb(238, 233, 233);
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+            }
+            .button{
+                width: 30%;
+                padding: 10px;
+                text-align: center;
+                margin: 5px 0;
+                border-radius: 25px;
+                font-weight: bold;
+                border: 2px solid #88aca8;
+                background: transparent;
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+            }
+            span{
+                background: #789c98;
+                height: 100%;
+                width: 0%;
+                border-radius: 25px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: -1;
+                transition: 0.5s;
+            }
+            button:hover span{
+                width: 100%;
+            }
+            button:hover{
+                border: none;
+            }
+
+            #salas {
+                background: none;
+                border: none;
+                padding: 0;
+                width: auto;
+                border: 2px solid #88aca8;
+            }
+  
+            .butaobusca{
+                width: 50%;
+                height: 15px;
+                padding: 1%;
+                align-items: center;
+                margin: 25% 5px;
+                border-radius: 25px;
+                font-weight: bold;
+                background: transparent;
+                color: transparent;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+            }
+            #salas:hover span{
+                width: 100%;
+            }
+            #salas:hover{
+                border: none;
+            }
+            .Prec h3{
+                font-size:3vh;
+                text-align:right;
+                margin-right: 20%;
+            }
+            .Prec h5{
+                font-size:2vh;
+                text-align:right;
+                margin-right: 20%;
+            }
+            .Percurso{
+                display: flex;
+                align-items: center;
+                padding: 60px;
+                margin-top: 100px;
+            }
+
+            .img {
+                width: 70vh;
+                height: 40vh;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+
+            .legenda {
+                margin-left: 20%;
+                max-width: 70%;
+                text-align: right;
+                color: aliceblue;
+            }
+
+            .legenda h3 {
+                margin: 0 0 10px 0;
+            }
+
+            .legenda p {
+                margin: 0;
+            }
+            .mapa p{
+                margin-top: 10%;
+                font-size: 2vh;
+            }
+                     
+      </style>
+     <script>
+            const button=document.querySelector("salas")
+            const input=document.querySelector("input-de-salas")
+            function salas(){
+            console.log(input.value)
+            }
+            function Home(){
+                window.location='/Home/index.html'
+            }
+            function Des(){
+                window.location='/Home/descobre/index.html'
+            }
+            function SN(){
+                window.location='/Home/SobreNos/index.html'
+            }
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const sala = urlParams.get("sala");
+            if(sala) {
+                window.location.href = `/Home/descobre/salas_aula/${sala}/index.html`
+            }
+                      
+     </script>
+</head>
+<body name="menu">
+    <div class="TD">
+        <div class="navbar">
+            <img src="logo.jpg" alt="Logo" class="logo">
+            <ul>
+                <li onclick="Home()"><a>Home</a></li>
+                <li onclick="Des()"><a>Descobre</a></li>
+                <li onclick=""><a href="">Planta 3D</a></li>
+                <li onclick="SN()"><a>Sobre nós</a></li>
+            </ul>
+        </div>
+        <div class="Prec">
+            <h1>Procuras outro espaço?</h1>
+            <form>
+                <input id="sala-finder" placeholder="EX:. A040" name="sala">
+                <button id="salas" class="button" type="submit" onclick="SALA()">
+                    <span></span>
+                    <img class="butaobusca" src="https://www.svgrepo.com/show/488200/find.svg" alt="Bucar">
+                </button>
+            </form>
+        </div>
+        <div class="Percurso"> 
+            <img src="B126.png" alt="percurso" class="img">
+            <div class="legenda">
+                <h3>Descrição do seu caminho</h3>
+                <p>Siga sempre em frente até chegar ao corredor principal.<br>De seguida vire à direta e continue a andar, <br>até chegar ao proximo cruzamento.<br>Depois vire à esquerda até alcançar as escadas.<br>E encontra a sua sala à sua direita. </p>
+                <hr>
+                <div class="mapa">
+                  <p>Casa de banho - espaços a azul claro <br>Escadas - espaços a amarelo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body> 
+
